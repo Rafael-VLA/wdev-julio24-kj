@@ -1,0 +1,17 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container">
+
+    <div class="d-flex align-items-center gap-2">
+        <a class="btn btn-outline-danger btn-sm" routerLink="/">
+            <i class="bi bi-arrow-bar-left"></i>
+        </a>
+        <a class="navbar-brand p-1">Empleados</a>
+    </div>
+
+    <a class="btn btn-outline-primary btn-sm" routerLink="/empleado/create-edit">Nuevo empleado</a>
+  </div>
+</nav>
+
+<div class="container mt-4">
+    <empleado-list [columns]="columns" [records]="records" />
+</div>

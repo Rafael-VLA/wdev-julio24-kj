@@ -1,0 +1,38 @@
+
+<div class="container">
+    <h1 class="text-blue">My first app</h1>
+
+    <hr>
+    <h1 class="h2 mb-3">Counter</h1>
+
+    <div class="d-flex flex-column row-gap-3">
+
+        <!-- Inicie en: 5 | Incrementar en: 5 -->
+        <!-- description="Contador que se incrementa en 5 en 5"  -->
+        <app-counter  
+            title="Contador 1" 
+            [count]="initialValue()"
+            [incrementBy]="5"
+        />
+
+        <!-- Inicie en: 100 | Incrementar en: 10 -->
+        <app-counter 
+            title="Contador 2" 
+            [count]="100"
+            [incrementBy]="10"
+        />
+
+    </div>
+
+    <hr>
+    
+    <h1 class="h2 mb-3">Producto</h1>
+    <app-product title="Tazas" />
+    
+    <hr>
+    
+    <h1 class="h2 mb-3">Lista de tareas</h1>
+
+    <app-list />
+
+</div>

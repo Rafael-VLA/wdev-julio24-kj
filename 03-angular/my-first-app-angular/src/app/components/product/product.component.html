@@ -1,0 +1,34 @@
+<div
+  *ngIf="flagProductoVisible === true; else elseBlockProduct"
+  class="card"
+  style="width: 18rem"
+>
+  <img
+    class="card-img-top"
+    src="https://plus.unsplash.com/premium_photo-1719289799376-d3de0ca4ddbc"
+    alt="Card image cap"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p>
+  </div>
+</div>
+
+<ng-template #elseBlockProduct>
+  <div style="width: 18rem" class="alert alert-info" role="alert">
+    ¡El producto está escondido!
+  </div>
+</ng-template>
+
+<!-- <div *ngIf="flagProductoVisible === false" class="alert alert-info" role="alert">
+    ¡El producto está escondido!
+</div> -->
+
+<div class="mt-4">
+  <button (click)="setFlag()" class="btn btn-outline-primary">
+    {{ textBtn }}
+  </button>
+</div>

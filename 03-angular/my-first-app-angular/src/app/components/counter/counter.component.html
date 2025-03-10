@@ -1,0 +1,11 @@
+
+<h6 class="h6">{{ title }}</h6>
+
+<div class="d-flex column-gap-2">
+    <button (click)="decrement()" class="btn btn-primary">Decrementar</button>
+    <span class="h4 mb-0">{{ count }}</span>
+    <button (click)="increment()" class="btn btn-primary">Incrementar</button>
+</div>
+
+<!-- Mostrar span en caso de que haya descripción -->
+<span *ngIf="hayDescripcion"><strong>Descripción:</strong> {{ description }}</span>

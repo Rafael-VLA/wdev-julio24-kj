@@ -1,0 +1,9 @@
+
+
+a .card {
+    transition: all 200ms ease;
+}
+
+a .card:hover {
+    border-color: var(--bs-primary);
+}

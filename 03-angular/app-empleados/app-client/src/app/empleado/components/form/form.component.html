@@ -1,0 +1,97 @@
+<form novalidate (submit)="HandleOnSubmit($event)">
+  <div id="fullname" class="d-flex gap-2 mb-3">
+    <div class="flex-grow-1">
+      <label for="name" class="form-label">Nombre</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        aria-describedby="nombre empleado"
+        name="nombre"
+        [(ngModel)]="dataForm.nombre"
+      />
+
+        <!-- [value]="dataForm.nombre"
+        (change)="HandleOnChange($event)" -->
+    </div>
+    <div class="flex-grow-1">
+      <label for="apellido1" class="form-label">Primer apellido</label>
+      <input
+        type="text"
+        id="apellido1"
+        class="form-control"
+        aria-describedby="primer apellido empleado"
+        name="apellido1"
+        [(ngModel)]="dataForm.apellido1"
+      />
+    </div>
+    <div class="flex-grow-1">
+      <label for="apellido2" class="form-label">Segundo apellido</label>
+      <input
+        type="text"
+        id="apellido2"
+        class="form-control"
+        aria-describedby="segundo apellido empleado"
+        name="apellido2"
+        [(ngModel)]="dataForm.apellido2"
+      />
+    </div>
+  </div>
+  <div class="d-flex gap-2 mb-3">
+    <div class="flex-grow-1">
+      <label for="salario" class="form-label">Salario</label>
+      <input
+        type="number"
+        id="salario"
+        class="form-control"
+        aria-describedby="salario empleado"
+        name="salario"
+        [(ngModel)]="dataForm.salario"
+      />
+    </div>
+
+    <div class="flex-grow-1">
+        <label for="puesto" class="form-label">Puestos</label>
+        <select  
+          id="puesto" 
+          class="form-select" 
+          aria-label="Puestos"
+          name="puesto"
+          [(ngModel)]="dataForm.puesto"
+        >
+          <option selected>Seleccione un puesto</option>
+          <option value="Programador">Programador</option>
+          <option value="Profesor">Profesor</option>
+          <option value="Secretaría">Secretaría</option>
+        </select>
+    </div>
+
+  </div>
+  <div class="mb-3">
+    <label for="correo" class="form-label">Correo</label>
+    <input
+      type="email"
+      class="form-control"
+      id="correo"
+      aria-describedby="correo"
+      name="correo"
+        [(ngModel)]="dataForm.correo"
+    />
+  </div>
+  <div class="mb-3 form-check">
+    <input 
+      type="checkbox" 
+      class="form-check-input" 
+      id="check"
+      name="activo"
+      [(ngModel)]="dataForm.activo"
+    />
+    <label class="form-check-label" for="check">¿Activo?</label>
+  </div>
+  <button [disabled]="this.isSubmitting === true" type="submit" class="btn btn-primary">
+    <div *ngIf="this.isSubmitting === true" class="spinner-border text-light spinner-border-sm me-1" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    {{ isEdit ? "Editar" : "Agregar" }}
+  </button>
+</form>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        .color-blue {
+            color: blue;
+        }
+
+        /* .container-flex-center {
+            display: flex;
+            justify-content: center;
+        } */
+
+    </style>
+</head>
+<body>
+    <h1>Refrescando la manipulación del DOM (HTML)</h1>
+    <hr>
+
+    <h1 style="color: red">Referencias</h1>
+
+    <input type="text">
+    <input name="julio" type="text">
+
+    <h1 id="titulo-principal" class="red green gray">Titulo</h1>
+    <div id="titulo-segundo" class="red green gray">Titulo 2</div>
+
+    <span>Información importante 1</span>
+    <span>Con otra Información importante 2</span>
+    <span>Con otra Información importante 3</span>
+
+    <div class="container">
+        <h1>Hola</h1>
+        <h1>Subtitulo</h1>
+        <p>blanditiis eius explicabo voluptatum tenetur! Cum, temporibus. Obcaecati porro ipsum qui facere.</p>
+    </div>
+
+    <!-- Practica -->
+    <!-- Obtener el nombre sin agregar clases o ids a los elementos a través del div con la clase 'contenedor-principal' usando el método querySelector  -->
+    <div class="contenedor-principal">
+        <p>Hey</p>
+        <div>
+            <p>Rafael Sequeira</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 style="color: red">Eventos</h1>
+
+    <!-- <button id="btn-saludar" onclick="handleSaludar('Pepito')">Saludar</button> -->
+    <button id="btn-saludar">Saludar</button>
+
+    <div 
+        class="div-saludar" 
+        style="background-color: gray; width: 50%;"
+    >
+        Hola soy el div
+    </div>
+
+    <div style="margin-top: 12px;">
+        <input id="input-blur" type="text">
+
+        <input id="input-focus" type="text">
+    </div>
+
+    <hr>
+
+    <h1 style="color: red">Insertar y remover elementos al DOM</h1>
+
+    <!-- Agrega etiqutas p y strong de ejemplo -->
+    <div id="container-insert">
+
+    </div>
+
+    <!-- Ubicar el elemento en alguna parte del html con ayuda de CSS -->
+    <div style="display: flex; justify-content: center;" class="container-coor">
+        <!-- <div style="width: 40px; height: 40px; background: #000;">
+
+        </div> -->
+    </div>
+
+    <!-- Contedor para la tarea de la imagen -->
+    <div id="container-img"></div>
+
+
+    <h1 style="color: red">Estilos desde js</h1>
+
+    <div class="circle"></div>
+
+    <script src="/dom.js"></script>
+</body>
+</html>

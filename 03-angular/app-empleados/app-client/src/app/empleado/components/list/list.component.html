@@ -1,0 +1,54 @@
+<div style="padding-bottom: 60px;" class="table-responsive">
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col" class="text-capitalize" *ngFor="let item of columns">{{ item }}</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of records">
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.apellido1 }}</td>
+        <td>{{ item.apellido2 }}</td>
+        <td>{{ item.salario }}</td>
+        <td>{{ item.puesto }}</td>
+
+        <td>
+
+          <span class="badge rounded-pill" [ngClass]="{ 
+              'text-bg-success': item.activo === true, 
+              'text-bg-danger': item.activo === false 
+            }">
+            {{ item.activo === true ? "Sí" : "No" }}
+          </span>
+
+        </td>
+
+        <td>{{ item.correo }}</td>
+        <td>
+          <div class="dropdown">
+
+            <button [disabled]="isSubmitting === true" class="btn btn-outline-primary btn-sm" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-three-dots"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" (click)="deleteEmployee(item.id!.toString())">Eliminar</button>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/empleado/create-edit" [queryParams]="{ id: item.id }">Editar</a>
+              </li>
+            </ul>
+
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,8 @@
+
+
+@media (max-width: 576px) {
+    form #fullname {
+        flex-direction: column;
+    }
+}
+

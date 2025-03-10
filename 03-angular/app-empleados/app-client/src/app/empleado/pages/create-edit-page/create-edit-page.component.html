@@ -1,0 +1,14 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container">
+        <a class="btn btn-outline-primary btn-sm" routerLink="/empleado">
+            <i class="bi bi-arrow-bar-left"></i>
+        </a>
+    </div>
+  </nav>
+  
+  <div class="container mt-4">
+    <div class="d-flex flex-column align-items-center">
+        <h1 class="h4 mb-4">Crear nuevo empleado</h1>
+        <empleado-form [isEdit]="isEdit" [idToEdit]="id" />
+    </div>
+  </div>
