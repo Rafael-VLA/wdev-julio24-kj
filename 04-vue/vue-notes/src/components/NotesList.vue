@@ -9,10 +9,16 @@
 <script>
 import NoteCard from './NoteCard.vue'
 
+import { mapState } from 'pinia'
+import { useNotesStore } from '@/store/useNotesStore';
+
 export default {
-    props: ['notes'],
+    // props: ['notes'],
     components: {
         NoteCard
+    },
+    computed: {
+        ...mapState(useNotesStore, ["notes"])
     }
 }
 </script>

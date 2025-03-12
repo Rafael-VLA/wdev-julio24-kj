@@ -17,8 +17,11 @@
 
 <hr />
 
-<NotesList :notes="notes" />
+<!-- <NotesList :notes="notes" /> -->
+<NotesList />
 
+<!-- <CanvaForm :notes="notes" /> =>  con props -->
+<!-- <CanvaForm @onDescription="handleDescription" /> => con emit -->
 <CanvaForm />
 
 </template>
@@ -26,17 +29,27 @@
 <script>
 import CanvaForm from '@/components/CanvaForm.vue';
 import NotesList from '@/components/NotesList.vue';
-import { notes } from '@/data/notes'
+// import { notes } from '@/data/notes';
 
 export default {
-    data(){
-        return {
-            notes: notes
-        }
-    },
+    // data(){
+    //     return {
+    //         notes: notes
+    //     }
+    // },
     components: {
         CanvaForm,
         NotesList
-    }
+    },
+    // methods: {
+    //   handleDescription(value){
+    //     const newNote = {
+    //       id: crypto.randomUUID(),
+    //       description: value
+    //     }
+
+    //     this.notes.push(newNote)
+    //   }
+    // }
 }
 </script>

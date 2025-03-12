@@ -12,7 +12,7 @@
     </div>
 
     <div class="d-flex justify-content-end">
-        <button class="btn btn-outline-danger btn-sm rounded-circle">
+        <button @click="handleDelete" class="btn btn-outline-danger btn-sm rounded-circle">
             <i class="bi bi-trash3"></i>
         </button>
     </div>
@@ -21,6 +21,9 @@
 
 
 <script>
+import { useNotesStore } from '@/store/useNotesStore';
+import { mapActions } from 'pinia';
+
 
 export default {
     props: ['description', 'id'],
@@ -32,7 +35,11 @@ export default {
     methods: {
         handleShow(){
             this.show = !this.show; // true a false
-        }
+        },
+        handleDelete(){
+            this.removeNote(this.id);
+        },
+        ...mapActions(useNotesStore, ['removeNote'])
     }
 }
 </script>
