@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React bases</title>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+
+        // react => react-dom(dom virtual) => dom real (html)
+
+        // Crea un elemento h1 con un texto que diga "Hola mundo" y luego insertar el h1 en el div con id app
+        const app = document.getElementById("app");
+
+        // Con vanilla JS
+        // JS => dom real 
+        // Creando el elemento h1
+        // const h1Element = document.createElement("h1");
+
+        // const message = "Hola mundo";
+
+        // h1Element.innerText = message;
+
+        // Injectando elemento h1
+        // app.appendChild(h1Element);
+
+        // Con react
+        // const h1Element = React.createElement("h1", null, "Hola mundo");
+
+        const HelloWorld = ({ name }) => {
+            return <h1>Hello world, { name }</h1>
+        }
+
+        const root = ReactDOM.createRoot(app);
+
+        root.render(<HelloWorld name="Rafael" />);
+
+    </script>
+
+</body>
+</html>
