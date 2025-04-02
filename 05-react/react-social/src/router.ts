@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router'
 import { HomePage } from './pages/HomePage';
 import { UserProfilePage } from './pages/UserProfilePage';
 import { MainLayout } from './layouts/MainLayout';
+import { ContactPage } from './pages/ContactPage';
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
             {
                 path: "user-profile/:id",
                 Component: UserProfilePage
+            },
+            {
+                path: "contact",
+                Component: ContactPage
             }
         ]
     }

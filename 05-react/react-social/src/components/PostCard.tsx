@@ -3,6 +3,8 @@ import { LikeButton } from "./LikeButton"
 import { FC, useState } from "react"
 import clsx from "clsx";
 import { Post } from "../interfaces/post";
+import { NavLink } from "react-router";
+import { useUserContext } from "../hooks/useUserContext";
 
 const getRandomInt = (max: number) => {
   return Math.floor(Math.random() * max);
@@ -13,11 +15,14 @@ interface Props {
 }
 
 export const PostCard:FC<Props> = ({ post }) => {
+
+  const { users } = useUserContext()
   
-  const { body, id, title } = post
+  const { body, id, title, userId } = post
   const [ count, setCount ] = useState(getRandomInt(1000));
   const [ showImage, setShowImage ] = useState(false);
 
+  const user = users.find(user => user.id.toString() === userId?.toString())
 
   // useEffect(() => {
   //   setCount(getRandomInt(1000))
@@ -37,7 +42,7 @@ export const PostCard:FC<Props> = ({ post }) => {
                     alt="Noticias Repretel"
                 />
                 <div>
-                    <p className="font-bold text-sm">Noticias Repretel Costa Rica</p>
+                    <NavLink to={`/user-profile/${userId}`} className="font-bold text-sm">{ user?.name }</NavLink>
                     <p className="text-xs text-gray-500">14 de marzo a la 1:20 p. m.</p>
                 </div>
             </div>
